@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <base id="base" href="${base}" />
+    <title>Spring Boot Shiro</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/js/html5shiv.min.js"></script>
+    <script src="/static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Begin page content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>index</h1>
+        </div>
+
+        <div>
+            <p th:text="${index}" /> <br/>
+            <p th:text="${map.key}" /> <br/>
+            <p th:text="${user.name}" /> <br/>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">&copy;2016 apopo</p>
+        </div>
+    </footer>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--&lt;!&ndash;-->
+<!--~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.-->
+<!--&ndash;&gt;-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--<meta charset="UTF-8" />-->
+<!--<title>Spring Boot Shiro</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h3>index</h3> <br/>-->
+<!--<p th:text="${index}" /> <br/>-->
+<!--<p th:text="${map.key}" /> <br/>-->
+<!--<p th:text="${user.name}" /> <br/>-->
+<!--</body>-->
+<!--</html>-->

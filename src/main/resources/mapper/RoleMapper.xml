@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.apopo.springbootshiro.mapper.RoleMapper" >
+
+    <resultMap id="BaseResultMap" type="cn.apopo.springbootshiro.domain.Role" >
+        <id column="id" property="id" />
+        <result column="available" property="available" />
+        <result column="description" property="description" />
+        <result column="role" property="role" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, role, description, available
+    </sql>
+
+    <sql id="Role_Column_List" >
+        r.id, r.role, r.description, r.available
+    </sql>
+
+    <select id="getByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Role_Column_List" />
+        FROM role r, user_role ur
+        WHERE r.id = ur.role_id
+        AND ur.user_id = #{userId}
+    </select>
+
+</mapper>
