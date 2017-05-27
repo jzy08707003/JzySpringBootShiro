@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"  
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <base id="base" href="${base}" />
+    <title>Spring Boot Shiro</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/js/html5shiv.min.js"></script>
+    <script src="/static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Begin page content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>首页</h1>
+        </div>
+
+        <div>
+            <a href="/user/userList">userList</a>
+            <a href="/user/userAdd">userAdd</a>
+            <p shiro:user="">  
+		       Welcome back Jzy!   
+		    </p>
+		    <p shiro:hasPermission="user:view">  
+		      Hello, <span shiro:principal=""></span>, how are you today?  
+		    </p>   
+		    <p shiro:hasPermission="user:add">  
+		      Hello, user:add 
+		    </p>   
+		    <p shiro:authenticated="">  
+		      Hello, user
+		    </p>
+		    <p shiro:hasRole="view">  
+		      Hello, hasRole:view 
+		    </p>   
+		    <p shiro:hasAllRoles="view,add">  
+		      Hello, hasAllRoles 
+		    </p>   
+		    <p shiro:hasAnyRoles="view,add">  
+		      Hello, hasAnyRoles:view,add 
+		    </p>   
+		    <p shiro:hasRole="admin">  
+		      Hello, hasAnyRoles:admin 
+		    </p>   
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+        </div>
+    </footer>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
