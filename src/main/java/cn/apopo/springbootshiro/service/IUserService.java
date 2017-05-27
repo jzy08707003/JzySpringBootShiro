@@ -6,7 +6,7 @@ package cn.apopo.springbootshiro.service;
 import cn.apopo.springbootshiro.domain.User;
 
 /**
- * Created by qiaoshuang on 2017/1/4.
+ * Created by zhenyujin on 2017/05/24.
  */
 public interface IUserService {
 

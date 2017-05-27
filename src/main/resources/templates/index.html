@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<!--
-~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
--->
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"  
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 
 <head>
     <meta charset="utf-8" />
@@ -13,8 +12,8 @@
     <title>Spring Boot Shiro</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/css/main.css" rel="stylesheet" />
+    <link th:href="@{/static/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -27,45 +26,55 @@
     <!-- Begin page content -->
     <div class="container">
         <div class="page-header">
-            <h1>index</h1>
+            <h1>首页Home</h1>
         </div>
 
         <div>
-            <p th:text="${index}" /> <br/>
-            <p th:text="${map.key}" /> <br/>
-            <p th:text="${user.name}" /> <br/>
+            <a href="/user/userList">userList</a>
+            <a href="/user/userAdd">userAdd</a>
+            <p shiro:guest="">  
+            	<a href="/login">登录</a>
+            </p>
+            <p shiro:user="">  
+            	<a href="/logout">登出</a>
+            </p>
+            <p shiro:user="">  
+		       Welcome back Jzy!   
+		    </p>
+		    <p shiro:hasPermission="user:view">  
+		      Hello, <span shiro:principal=""></span>, how are you today?  
+		    </p>   
+		    <p shiro:hasPermission="user:add">  
+		      Hello, user:add 
+		    </p>   
+		    <p shiro:authenticated="">  
+		      Hello, user
+		    </p>
+		    <p shiro:hasRole="view">  
+		      Hello, hasRole:view 
+		    </p>   
+		    <p shiro:hasAllRoles="view,add">  
+		      Hello, hasAllRoles 
+		    </p>   
+		    <p shiro:hasAnyRoles="view,add">  
+		      Hello, hasAnyRoles:view,add 
+		    </p>   
+		    <p shiro:hasRole="admin">  
+		      Hello, hasAnyRoles:admin 
+		    </p>   
         </div>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p class="text-muted">&copy;2016 apopo</p>
         </div>
     </footer>
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/static/js/ie10-viewport.min.js"></script>
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script th:src="@{/static/js/ie10-viewport.min.js}"></script>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
 
 </body>
 </html>
-
-
-<!--<!DOCTYPE html>-->
-<!--&lt;!&ndash;-->
-<!--~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.-->
-<!--&ndash;&gt;-->
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--<meta charset="UTF-8" />-->
-<!--<title>Spring Boot Shiro</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h3>index</h3> <br/>-->
-<!--<p th:text="${index}" /> <br/>-->
-<!--<p th:text="${map.key}" /> <br/>-->
-<!--<p th:text="${user.name}" /> <br/>-->
-<!--</body>-->
-<!--</html>-->

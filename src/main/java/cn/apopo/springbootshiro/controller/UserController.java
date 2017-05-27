@@ -8,20 +8,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by qiaoshuang on 2017/1/4.
+ * Created by zhenyujin on 2017/05/24.
  */
 @Controller
 @RequestMapping("user")
 public class UserController {
+	
     /**
      * 用户查询
      *
      * @return
      */
     @RequestMapping("/userList")
-    @RequiresPermissions("user:view") // 权限管理
+    @RequiresPermissions({"user:view"})
     public String userInfo(){
-        return "users";
+        return "usersList";
     }
 
     /**
@@ -34,6 +35,7 @@ public class UserController {
     public String userInfoAdd(){
         return "userAdd";
     }
+    
     /**
      * 用户删除
      *

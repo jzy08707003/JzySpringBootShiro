@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 权限实体类
  *
- * Created by qiaoshuang on 2017/1/4.
+ * Created by zhenyujin on 2017/05/24.
  */
 public class Permission implements Serializable {
 

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 用户信息
  *
- * Created by qiaoshuang on 2017/1/3.
+ * Created by zhenyujin on 2017/1/3.
  */
 public class User implements Serializable {
 

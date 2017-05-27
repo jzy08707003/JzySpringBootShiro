@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 系统角色实体类
  *
- * Created by qiaoshuang on 2017/1/3.
+ * Created by zhenyujin on 2017/1/3.
  */
 public class Role implements Serializable{
 

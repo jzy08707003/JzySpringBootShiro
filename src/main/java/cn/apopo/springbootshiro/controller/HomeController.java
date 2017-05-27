@@ -18,14 +18,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import cn.apopo.springbootshiro.domain.User;
 
 /**
- * Created by qiaoshuang on 2016/12/30.
+ * Created by zhenyujin on 2017/05/24.
  */
 @Controller
 public class HomeController {
 
     @RequestMapping({"/", "index"})
     public String index(Model model, Map<String, Object> map, @ModelAttribute("user") User user) {
-        model.addAttribute("index", "我就是单纯地测一下thymeleaf的用法");
+        model.addAttribute("index", "thymeleaf");
 
         Map<String, String> aMap = new HashMap<>();
         aMap.put("key", "value");
@@ -46,7 +46,7 @@ public class HomeController {
         // 登录失败从request中获取shiro处理的异常信息
         // shiroLoginFailure:就是shiro异常类的全类名
         String exception = (String) request.getAttribute("shiroLoginFailure");
-        String msg = "";
+        String msg = "登录成功";
         if (exception != null) {
             if (UnknownAccountException.class.getName().equals(exception)) {
                 msg = "UnknownAccountException -->帐号不存在：";
@@ -57,8 +57,11 @@ public class HomeController {
             } else {
                 msg = "else >> " + exception;
             }
+        }else{
+        	return "myHome";//因为使用了shiro过滤器 会被拦截并重定向到配置中的文件
         }
         map.put("msg", msg);
+        
         // 此方法不处理登录成功,由shiro进行处理.
         return "/login";
     }

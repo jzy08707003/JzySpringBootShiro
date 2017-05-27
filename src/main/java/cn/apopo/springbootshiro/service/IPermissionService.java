@@ -8,7 +8,7 @@ import java.util.List;
 import cn.apopo.springbootshiro.domain.Permission;
 
 /**
- * Created by qiaoshuang on 2017/1/5.
+ * Created by zhenyujin on 2017/05/24.
  */
 public interface IPermissionService {
 

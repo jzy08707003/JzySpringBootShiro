@@ -15,7 +15,7 @@ import cn.apopo.springbootshiro.service.IPermissionService;
 import cn.apopo.springbootshiro.service.IRoleService;
 
 /**
- * Created by qiaoshuang on 2017/1/5.
+ * Created by zhenyujin on 2017/05/24.
  */
 @Service
 public class RoleServiceImpl implements IRoleService {

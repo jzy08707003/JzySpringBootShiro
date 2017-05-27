@@ -8,7 +8,7 @@ import cn.apopo.springbootshiro.domain.User;
 /**
  * User持久化
  *
- * Created by qiaoshuang on 2017/1/4.
+ * Created by zhenyujin on 2017/05/24.
  */
 public interface UserMapper {
 

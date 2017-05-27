@@ -14,7 +14,7 @@ import cn.apopo.springbootshiro.mapper.PermissionMapper;
 import cn.apopo.springbootshiro.service.IPermissionService;
 
 /**
- * Created by qiaoshuang on 2017/1/5.
+ * Created by zhenyujin on 2017/05/24.
  */
 @Service
 public class PermissionServiceImpl implements IPermissionService {

@@ -5,20 +5,25 @@ package cn.apopo.springbootshiro.service.impl;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.apopo.springbootshiro.configuration.shiro.ShiroConfiguration;
 import cn.apopo.springbootshiro.domain.User;
 import cn.apopo.springbootshiro.mapper.UserMapper;
 import cn.apopo.springbootshiro.service.IRoleService;
 import cn.apopo.springbootshiro.service.IUserService;
 
 /**
- * Created by qiaoshuang on 2017/1/4.
+ * Created by zhenyujin on 2017/05/24.
  */
 @Service
 public class UserServiceImpl implements IUserService {
 
+	private static final Logger logger = LoggerFactory.getLogger(ShiroConfiguration.class);
+	
     @Resource
     private IRoleService roleService;
 
@@ -28,7 +33,7 @@ public class UserServiceImpl implements IUserService {
     @Transactional(readOnly = true)
     @Override
     public User findByUserName(String username) {
-        System.out.println("UserServiceImpl.findByUsername()");
+        logger.info("UserServiceImpl.findByUsername()");
         User user = userMapper.findbyUserName(username);
         user.setRoleList(roleService.getRolesWithPermissionByUserId(user.getId()));
         return user;
