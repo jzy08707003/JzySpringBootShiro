@@ -95,10 +95,6 @@ public class ShiroConfiguration{
         return shiroFilterFactoryBean;
     }
 
-    public static void main(String[] args) {
-		System.out.println(new AntPathMatcher().match("/static/**", "/static/bootstrap/js/bootstrap.min.js"));
-	}
-    
     @Bean(name = "securityManager")
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
